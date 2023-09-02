@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<p>Count Page</p>
+<p id="cnt"></p>
+
+<script>
+    var ws = new WebSocket('ws://127.0.0.1:8000/ws/sc/')
+
+    ws.onopen = function(){
+        console.log('Websocket Connected...')
+        ws.send('Hi, Message from Client...')
+    }
+    ws.onmessage = function(event){
+        console.log('Message Received from Server:', event)
+        var data = JSON.parse(event.data)
+        document.getElementById("cnt").innerText = data.count
+    }
+    ws.onmerror = function(event){
+        console.log('Message Error Occurred:', event)
+    }
+    ws.onclose = function(event){
+        console.log('Websocket Connection Closed...', event)
+    }
+</script>
+
+</body>
+</html>

@@ -22,5 +22,6 @@ urlpatterns = [
     path('gs1/', include('gs1.urls')),
     path('gs2/', include('gs2.urls')),
     path('gs3/', include('gs3.urls')),
-    path('gs4/', include('gs4.urls'))
+    path('gs4/', include('gs4.urls')),
+    path('gs5/', include('gs5.urls')),
 ]

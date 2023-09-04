@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'gs1',
     'gs2',
     'gs3',
+    'gs4',
+    'gs5'
 ]
 
 MIDDLEWARE = [
